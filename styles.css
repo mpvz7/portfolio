@@ -1,0 +1,178 @@
+/* Global body styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #87CEEB; /* Ciel bleu */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    margin-top: 2rem;
+    color: #fff;
+}
+
+
+/* Game container (bottom fixed) */
+.game-container {
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.scene {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ground {
+    width: 100%;
+    height: 10vh;
+    background-color: #2E8B57; /* Terre */
+    position: absolute;
+    bottom: 0;
+}
+
+.character {
+    width: 5rem;
+    height: 5rem;
+    background-color: #FFD700; /* Jaune pour le personnage */
+    position: absolute;
+    bottom: 9vh; /* Position du personnage sur la piste */
+    left: 5rem;
+    border-radius: 50%;
+    transition: left 0.2s, bottom 0.5s;
+}
+
+/* Section container */
+.sections {
+    position: absolute;
+    bottom: 20vh; /* Placer les onglets juste au-dessus de la piste */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 1;
+}
+
+.section {
+    background-color: #FFC107;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.section:hover {
+    background-color: #FF9800;
+}
+
+/* Cards container */
+.content-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh; /* Placer les cartes un peu plus bas pour ne pas chevaucher le jeu */
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 18rem;
+    height: 20rem; /* Taille uniforme pour toutes les cartes */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.card h4 {
+    font-style: italic;
+    color: #7c7b7b;
+    margin: 0.5rem 0;
+}
+
+.card ul {
+    list-style-type: disc;
+    color: #34495e;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #16a085;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Logo styling */
+.card .logo {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .card {
+        width: 16rem;
+        height: 22rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 14rem;
+        height: 20rem;
+    }
+
+    .cards-container {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 12rem;
+        height: 18rem;
+    }
+
+    .cards-container {
+        gap: 5px;
+    }
+
+    .content-container {
+        padding-top: 8vh; /* Adjust padding for smaller screens */
+    }
+}
